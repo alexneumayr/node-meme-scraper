@@ -1,8 +1,6 @@
 import fs, { existsSync, mkdirSync } from 'node:fs';
 import client from 'node:https';
 
-let websiteContent = '';
-
 // Create "memes" folder
 const folderName = './memes';
 try {
@@ -31,9 +29,7 @@ async function getWebsite() {
 }
 
 // Function to save image URLs in an array
-async function imageUrlsToArray() {
-  const websiteContent = await getWebsite();
-
+function imageUrlsToArray(websiteContent) {
   let tempArray;
   const urls = [];
   const rex = /<img[^>]+src="?([^"\s]+)"?\s*\/>/g;
