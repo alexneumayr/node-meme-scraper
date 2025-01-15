@@ -28,3 +28,18 @@ async function getWebsite() {
     console.log(error);
   }
 }
+
+// Function to save image URLs in an array
+async function imageUrlsToArray() {
+  const websiteContent = await getWebsite();
+
+  let tempArray;
+  const urls = [];
+  const rex = /<img[^>]+src="?([^"\s]+)"?\s*\/>/g;
+
+  while ((tempArray = rex.exec(websiteContent))) {
+    urls.push(tempArray[1]);
+  }
+  console.log(urls);
+}
+imageUrlsToArray();
