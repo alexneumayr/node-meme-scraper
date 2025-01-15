@@ -40,6 +40,7 @@ async function imageUrlsToArray() {
   while ((tempArray = rex.exec(websiteContent))) {
     urls.push(tempArray[1]);
   }
+  urls.length = 10;
   console.log(urls);
 }
 imageUrlsToArray();
