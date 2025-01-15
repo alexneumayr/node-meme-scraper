@@ -65,7 +65,7 @@ function downloadFromArray(urlArray) {
   urlArray.forEach((imageURL, index) =>
     downloadImage(
       imageURL,
-      index < 10 ? `./memes/0${index + 1}.jpg` : `./memes/${index + 1}.jpg`,
+      index < 9 ? `./memes/0${index + 1}.jpg` : `./memes/${index + 1}.jpg`,
     ),
   );
 }
