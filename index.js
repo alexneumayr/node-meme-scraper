@@ -63,3 +63,13 @@ function downloadImage(url, filepath) {
     });
   });
 }
+
+// Function to download images from an array containing images URLs and save it in the memes folder
+function downloadFromArray(urlArray) {
+  urlArray.forEach((imageURL, index) =>
+    downloadImage(
+      imageURL,
+      index < 10 ? `./memes/0${index + 1}.jpg` : `./memes/${index + 1}.jpg`,
+    ),
+  );
+}
