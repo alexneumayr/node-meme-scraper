@@ -1,11 +1,11 @@
-import fs, { existsSync, mkdirSync } from 'node:fs';
+import fs from 'node:fs';
 import client from 'node:https';
 
 // Create "memes" folder
 const folderName = './memes';
 try {
-  if (!existsSync(folderName)) {
-    mkdirSync(folderName);
+  if (!fs.existsSync(folderName)) {
+    fs.mkdirSync(folderName);
   }
 } catch (err) {
   console.error(err);
