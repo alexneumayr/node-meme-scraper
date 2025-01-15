@@ -38,7 +38,7 @@ function imageUrlsToArray(websiteContent) {
     urls.push(tempArray[1]);
   }
   urls.length = 10;
-  console.log(urls);
+  return urls;
 }
 
 // Function to download images
@@ -69,3 +69,15 @@ function downloadFromArray(urlArray) {
     ),
   );
 }
+
+// Function containing the main functionality of the application
+async function main() {
+  // Save website content in a variable
+  const websiteContent = await getWebsite();
+  // Extract URLs from the website content and save it in an array
+  const urlArray = imageUrlsToArray(websiteContent);
+  // Download the images from the array
+  downloadFromArray(urlArray);
+}
+
+main().catch((error) => console.error('Error:', error));
