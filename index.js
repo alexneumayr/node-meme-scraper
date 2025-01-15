@@ -13,7 +13,7 @@ try {
 }
 
 // Function to fetch the website
-const getWebsite = async () => {
+async function getWebsite() {
   try {
     const response = await fetch(
       'https://memegen-link-examples-upleveled.netlify.app',
@@ -27,11 +27,4 @@ const getWebsite = async () => {
   } catch (error) {
     console.log(error);
   }
-};
-
-getWebsite()
-  .then((website) => {
-    websiteContent = website;
-    console.log(websiteContent);
-  })
-  .catch((error) => console.log(error));
+}
